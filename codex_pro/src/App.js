@@ -1,16 +1,28 @@
-import logo from './logo.svg';
+
 import './App.css';
-<><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"></link><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script><></></>
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Lander from './components/Lander';
+import ExamPortal from './components/ExamPortal';
+import CodingQues from './components/CodingQues';
+import "bootstrap-icons/font/bootstrap-icons.css";
+import StepperForm from './components/stepperform';
+import Editor from './components/Editor';
+
 
 
 function App() {
   return (
-    <div className="App">
-<div className="container" >
-  <h1 className="display-1">Hello World !</h1>
-  </div>
-    </div>
+<Router>
+      <Routes>
+      <Route path="/" element={<Lander/>}/>
+      <Route path="/ExamPortal" element={<ExamPortal/>}/>
+      <Route path="/CodingQuestion" element={<CodingQues/>}/>
+      <Route path="/stepper" element={<StepperForm/>}/>
+      <Route path="/editor" element={<Editor/>}/>
+      </Routes>
+    </Router>
   );
-}
-
+  }
 export default App;
